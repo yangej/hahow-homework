@@ -1,6 +1,7 @@
-import BackHomeButton from "@/modules/app/components/BackHomeButton";
-import HeroProfilePanel from "@/modules/hero/components/HeroProfilePanel";
 import type { Params } from "./types";
+
+import BackHomeButton from "@/modules/app/components/BackHomeButton";
+import HeroProfileView from "@/modules/app/components/HeroProfileView";
 
 type PageProps = {
   params: Params;
@@ -11,7 +12,7 @@ const HeroPage = ({ params }: PageProps) => {
 
   return (
     <>
-      <HeroProfilePanel id={id} />
+      <HeroProfileView id={id} />
       <BackHomeButton />
     </>
   );

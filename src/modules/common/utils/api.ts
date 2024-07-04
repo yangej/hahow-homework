@@ -4,12 +4,12 @@ const request = async <Result>(url: string, options: RequestInit) => {
     const contentType = response.headers.get('content-type');
 
     if (contentType?.includes('application/json')) {
-      return await response.json() as Result;
+      return (await response.json()) as Result;
     } else {
-      return await response.text() as Result;
+      return (await response.text()) as Result;
     }
   } catch (error) {
-    console.error("Request failed:", error);
+    console.error('Request failed:', error);
     throw error;
   }
 };
@@ -18,9 +18,9 @@ const makeGetRequest =
   (baseURL: string) =>
   <Result = unknown>(path: string, headers = {}) => {
     const options = {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...headers,
       },
     };
@@ -30,11 +30,15 @@ const makeGetRequest =
 
 const makePostRequest =
   (baseURL: string) =>
-  <Result = unknown, Body = unknown>(path: string, body: Body, headers = {}) => {
+  <Result = unknown, Body = unknown>(
+    path: string,
+    body: Body,
+    headers = {},
+  ) => {
     const options = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...headers,
       },
       body: JSON.stringify(body),
@@ -45,11 +49,15 @@ const makePostRequest =
 
 const makePutRequest =
   (baseURL: string) =>
-  <Result = unknown, Body = unknown>(path: string, body: Body, headers = {}) => {
+  <Result = unknown, Body = unknown>(
+    path: string,
+    body: Body,
+    headers = {},
+  ) => {
     const options = {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...headers,
       },
       body: JSON.stringify(body),
@@ -60,11 +68,15 @@ const makePutRequest =
 
 const makePatchRequest =
   (baseURL: string) =>
-  <Result = unknown, Body = unknown>(path: string, body: Body, headers = {}) => {
+  <Result = unknown, Body = unknown>(
+    path: string,
+    body: Body,
+    headers = {},
+  ) => {
     const options = {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...headers,
       },
       body: JSON.stringify(body),
@@ -77,9 +89,9 @@ const makeDeleteRequest =
   (baseURL: string) =>
   <Result = unknown>(path: string, headers = {}) => {
     const options = {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...headers,
       },
     };
@@ -97,5 +109,5 @@ const createClient = (baseURL: string) => {
   };
 };
 
-const HAHOW_API_URL = "https://hahow-recruit.herokuapp.com";
+const HAHOW_API_URL = 'https://hahow-recruit.herokuapp.com';
 export const hahow = createClient(HAHOW_API_URL);

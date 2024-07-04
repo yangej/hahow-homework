@@ -1,4 +1,4 @@
-import HomeView from "@/modules/app/components/HomeView";
+import HomeView from '@/modules/app/components/HomeView';
 
 const HomePage = () => {
   return (
@@ -6,6 +6,6 @@ const HomePage = () => {
       <HomeView />
     </main>
   );
-}
+};
 
 export default HomePage;

@@ -1,3 +1,3 @@
 export type Params = {
-    heroesId?: string;
-}
+  heroesId?: string;
+};

@@ -1,12 +1,13 @@
-"use client";
+'use client';
 
 /* eslint-disable react/no-children-prop */
-import { useForm } from "@tanstack/react-form";
-import { HeroAbilityFormValues } from "./types";
-import HeroAbilityItem from "./HeroAbilityItem";
-import styled, { css, RuleSet } from "styled-components";
-import { useMemo } from "react";
-import HeroAbilityResultPanel from "./HeroAbilityResultPanel";
+import { useForm } from '@tanstack/react-form';
+import { useMemo } from 'react';
+import styled, { RuleSet, css } from 'styled-components';
+
+import HeroAbilityItem from './HeroAbilityItem';
+import HeroAbilityResultPanel from './HeroAbilityResultPanel';
+import { HeroAbilityFormValues } from './types';
 
 const Container = styled.div`
   display: flex;
@@ -24,16 +25,16 @@ const FieldContainer = styled.div`
   width: 100%;
 `;
 
-type ButtonStatus = "normal" | "disabled";
+type ButtonStatus = 'normal' | 'disabled';
 
 const SubmitButtonStyles: Record<ButtonStatus, RuleSet> = {
   normal: css`
     color: white;
-    background-color: ${props => props.theme.colors.main};
+    background-color: ${(props) => props.theme.colors.main};
   `,
   disabled: css`
     color: white;
-    background-color: ${props => props.theme.colors.secondaryText};
+    background-color: ${(props) => props.theme.colors.secondaryText};
   `,
 };
 
@@ -127,20 +128,17 @@ const HeroAbilityForm = ({ defaultValues, onSubmit }: Props) => {
           children={(state) => {
             const total = Object.values(state.values).reduce(
               (acc, cur) => acc + cur,
-              0
+              0,
             );
             const disabled = total !== limit;
 
             return (
               <>
-                <HeroAbilityResultPanel
-                  limit={limit}
-                  total={total}
-                />
+                <HeroAbilityResultPanel limit={limit} total={total} />
                 <SubmitButton
                   type="submit"
                   disabled={disabled}
-                  $status={disabled ? "disabled" : "normal"}
+                  $status={disabled ? 'disabled' : 'normal'}
                 >
                   提交
                 </SubmitButton>

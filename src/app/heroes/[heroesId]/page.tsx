@@ -1,7 +1,7 @@
-import type { Params } from "./types";
+import BackHomeButton from '@/modules/app/components/BackHomeButton';
+import HeroProfileView from '@/modules/app/components/HeroProfileView';
 
-import BackHomeButton from "@/modules/app/components/BackHomeButton";
-import HeroProfileView from "@/modules/app/components/HeroProfileView";
+import type { Params } from './types';
 
 type PageProps = {
   params: Params;

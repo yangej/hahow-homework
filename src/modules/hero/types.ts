@@ -7,7 +7,7 @@ export type Hero = {
 export type ListHeroResponse = Hero[];
 
 export type GetHeroPayload = {
-  id: Hero["id"];
+  id: Hero['id'];
 };
 
 export type GetHeroResponse = Hero;
@@ -20,13 +20,13 @@ export type HeroProfile = {
 };
 
 export type GetHeroProfilePayload = {
-  id: Hero["id"];
+  id: Hero['id'];
 };
 
 export type GetHeroProfileResponse = HeroProfile;
 
 export type PatchHeroProfilePayload = {
-  id: Hero["id"];
+  id: Hero['id'];
 } & Partial<HeroProfile>;
 
 export type PatchHeroProfileResponse = string;

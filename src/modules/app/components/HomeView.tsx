@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -12,11 +12,11 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 100px;
   user-select: none;
-  color: ${props => props.theme.colors.secondaryText};
+  color: ${(props) => props.theme.colors.secondaryText};
 `;
 
 const Highlight = styled.span`
-  color: ${props => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.main};
 `;
 
 const HomeView = () => {

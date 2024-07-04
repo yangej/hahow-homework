@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import HeroCard from "./HeroCard";
-import styled from "styled-components";
-import Link from "next/link";
-import { useHeroes } from "../hooks";
+import Link from 'next/link';
+import styled from 'styled-components';
+
+import { useHeroes } from '../hooks';
+import HeroCard from './HeroCard';
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const Container = styled.div`
   gap: 20px;
   margin: auto;
   padding: 20px;
-  background-color: ${props => props.theme.colors.main};
+  background-color: ${(props) => props.theme.colors.main};
 `;
 
 type Props = {
@@ -41,7 +42,7 @@ const HeroList = ({ currentId }: Props) => {
             <HeroCard
               name={item.name}
               image={item.image}
-              status={currentId === item.id ? "active" : "inactive"}
+              status={currentId === item.id ? 'active' : 'inactive'}
             />
           </Link>
         ))}

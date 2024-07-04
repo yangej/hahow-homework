@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
-import type { Params } from "./types";
-import Providers from "./Providers";
-import "./global.css";
+import { colors } from '@/modules/app/constants/theme';
+import HeroList from '@/modules/hero/components/HeroList';
 
-import HeroList from "@/modules/hero/components/HeroList";
-import { colors } from "@/modules/app/constants/theme";
+import Providers from './Providers';
+import './global.css';
+import type { Params } from './types';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "HaHow Recruit Homework",
-  description: "This is a website implements homework assigned by Hahow.",
+  title: 'HaHow Recruit Homework',
+  description: 'This is a website implements homework assigned by Hahow.',
 };
 
 export default function RootLayout({

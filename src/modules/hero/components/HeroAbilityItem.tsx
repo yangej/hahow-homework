@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -9,7 +9,8 @@ const Container = styled.div`
   height: 150px;
   padding: 10px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 2px 0px,
+  box-shadow:
+    rgba(0, 0, 0, 0.04) 0px 0px 2px 0px,
     rgba(0, 0, 0, 0.08) 0px 4px 10px 0px;
   border-radius: 16px;
   overflow: hidden;
@@ -38,15 +39,15 @@ const ButtonContainer = styled.div`
 const Button = styled.button`
   width: 30px;
   height: 30px;
-  color: ${props => props.theme.colors.main};
-  background-color: ${props => props.theme.colors.mainLight};
+  color: ${(props) => props.theme.colors.main};
+  background-color: ${(props) => props.theme.colors.mainLight};
   border: none;
   cursor: pointer;
   transition: background-color 300ms;
 
   &:hover {
     color: white;
-    background-color: ${props => props.theme.colors.main};
+    background-color: ${(props) => props.theme.colors.main};
   }
 `;
 
@@ -65,7 +66,7 @@ type Props = {
 const HeroAbilityItem = ({
   label,
   value: initialValue = 0,
-  onChange
+  onChange,
 }: Props) => {
   const [value, setValue] = useState(initialValue);
 

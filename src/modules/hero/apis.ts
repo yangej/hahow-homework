@@ -1,4 +1,5 @@
-import * as clients from "@/modules/common/utils/api";
+import * as clients from '@/modules/common/utils/api';
+
 import type {
   GetHeroPayload,
   GetHeroProfilePayload,
@@ -7,9 +8,9 @@ import type {
   ListHeroResponse,
   PatchHeroProfilePayload,
   PatchHeroProfileResponse,
-} from "./types";
+} from './types';
 
-const listHero = () => clients.hahow.get<ListHeroResponse>("/heroes");
+const listHero = () => clients.hahow.get<ListHeroResponse>('/heroes');
 
 const getHero = ({ id }: GetHeroPayload) => {
   return clients.hahow.get<GetHeroResponse>(`/heroes/${id}`);
@@ -22,7 +23,7 @@ const getHeroProfile = ({ id }: GetHeroProfilePayload) => {
 const patchHeroProfile = ({ id, ...body }: PatchHeroProfilePayload) => {
   return clients.hahow.patch<PatchHeroProfileResponse, typeof body>(
     `/heroes/${id}/profile`,
-    body
+    body,
   );
 };
 

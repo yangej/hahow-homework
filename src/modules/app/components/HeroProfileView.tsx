@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import styled from "styled-components";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import styled from 'styled-components';
 
-import HeroAbilityForm from "@/modules/hero/components/HeroAbilityForm";
-import type { HeroAbilityFormValues } from "@/modules/hero/components/types";
-import { heroProfileKeys, useHeroProfile } from "@/modules/hero/hooks";
-import { patchHeroProfile } from "@/modules/hero/apis";
+import { patchHeroProfile } from '@/modules/hero/apis';
+import HeroAbilityForm from '@/modules/hero/components/HeroAbilityForm';
+import type { HeroAbilityFormValues } from '@/modules/hero/components/types';
+import { heroProfileKeys, useHeroProfile } from '@/modules/hero/hooks';
 
 const Container = styled.div`
   width: 100%;
@@ -29,8 +29,8 @@ const HeroProfileView = ({ id }: Props) => {
       alert(err.message);
     },
     onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: heroProfileKeys.item(id) });
-      alert("提交成功");
+      queryClient.invalidateQueries({ queryKey: heroProfileKeys.item(id) });
+      alert('提交成功');
     },
   });
 
@@ -39,7 +39,7 @@ const HeroProfileView = ({ id }: Props) => {
   };
 
   const renderNode = () => {
-    if (!isFetched) return "Loading...";
+    if (!isFetched) return 'Loading...';
 
     return <HeroAbilityForm defaultValues={data} onSubmit={handleSubmit} />;
   };

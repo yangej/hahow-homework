@@ -1,16 +1,16 @@
-import { useState } from "react";
-import styled, { css, RuleSet } from "styled-components";
+import { useState } from 'react';
+import styled, { RuleSet, css } from 'styled-components';
 
-type Status = "active" | "inactive";
+type Status = 'active' | 'inactive';
 
 const ContainerStyles: Record<Status, RuleSet> = {
   active: css`
-    background-color: ${props => props.theme.colors.mainLight};
-    color: ${props => props.theme.colors.main};
+    background-color: ${(props) => props.theme.colors.mainLight};
+    color: ${(props) => props.theme.colors.main};
   `,
   inactive: css`
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.secondaryText};
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.secondaryText};
   `,
 };
 
@@ -38,7 +38,7 @@ const Image = styled.img<{ $hovering: boolean }>`
   top: 0;
   left: 0;
   width: 100%;
-  transform: ${({ $hovering }) => ($hovering ? "scale(1.1)" : "scale(1)")};
+  transform: ${({ $hovering }) => ($hovering ? 'scale(1.1)' : 'scale(1)')};
   transition: transform 300ms ease-out 0s;
 `;
 
@@ -55,7 +55,7 @@ type Props = {
   status?: Status;
 };
 
-const HeroCard = ({ image, name, status = "inactive" }: Props) => {
+const HeroCard = ({ image, name, status = 'inactive' }: Props) => {
   const [hovering, setHovering] = useState(false);
   const handleMouseEnter = () => {
     setHovering(true);
@@ -82,9 +82,7 @@ const HeroCard = ({ image, name, status = "inactive" }: Props) => {
 
 const HeroCardLoading = () => {
   return (
-    <Container
-      $status='inactive'
-    >
+    <Container $status="inactive">
       <ImageContainer>
         <Image src="" $hovering={false} />
       </ImageContainer>

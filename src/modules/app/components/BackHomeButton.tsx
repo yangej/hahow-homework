@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import styled from "styled-components";
+import Link from 'next/link';
+import styled from 'styled-components';
 
 const Container = styled.div`
   position: fixed;
@@ -15,16 +15,17 @@ const Button = styled.button`
   padding: 10px 16px;
   border: none;
   border-radius: 18px;
-  background-color: ${props => props.theme.colors.mainLight};
-  color: ${props => props.theme.colors.main};
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 2px 0px,
+  background-color: ${(props) => props.theme.colors.mainLight};
+  color: ${(props) => props.theme.colors.main};
+  box-shadow:
+    rgba(0, 0, 0, 0.04) 0px 0px 2px 0px,
     rgba(0, 0, 0, 0.08) 0px 4px 10px 0px;
   cursor: pointer;
   transition: background-color 300ms;
 
   &:hover {
     color: white;
-    background-color: ${props => props.theme.colors.main};
+    background-color: ${(props) => props.theme.colors.main};
   }
 `;
 

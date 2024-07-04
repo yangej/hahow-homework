@@ -14,7 +14,7 @@ export const useHeroes = () => {
   return useQuery(heroesQueryOptions);
 };
 
-const heroProfileKeys = queryKeyFactory("heroProfile");
+export const heroProfileKeys = queryKeyFactory("heroProfile");
 
 const heroProfileQueryOptions = (id: Hero["id"]) =>
   queryOptions({

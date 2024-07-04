@@ -1,7 +1,11 @@
-export default function Home() {
+import HomeView from "@/modules/app/components/HomeView";
+
+const HomePage = () => {
   return (
     <main>
-      Hello World
+      <HomeView />
     </main>
   );
 }
+
+export default HomePage;

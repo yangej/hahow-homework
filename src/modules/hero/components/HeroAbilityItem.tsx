@@ -58,23 +58,27 @@ const BottomRow = styled.div`
 
 type Props = {
   label: string;
-  initialValue?: number;
+  value?: number;
+  onChange?(value: number): void;
 };
 
 const HeroAbilityItem = ({
   label,
-  initialValue = 0,
+  value: initialValue = 0,
+  onChange
 }: Props) => {
   const [value, setValue] = useState(initialValue);
 
   const handleIncrease = () => {
     setValue(value + 1);
+    onChange?.(value + 1);
   };
 
   const handleDecrease = () => {
     if (value <= 0) return;
 
     setValue(value - 1);
+    onChange?.(value - 1);
   };
 
   return (
@@ -83,10 +87,10 @@ const HeroAbilityItem = ({
       <BottomRow>
         <Label>{label}</Label>
         <ButtonContainer>
-          <Button onClick={handleIncrease}>
+          <Button type="button" onClick={handleIncrease}>
             +
           </Button>
-          <Button onClick={handleDecrease}>
+          <Button type="button" onClick={handleDecrease}>
             -
           </Button>
         </ButtonContainer>
@@ -106,10 +110,10 @@ const HeroAbilityItemLoading = ({ label }: LoadingProps) => {
       <BottomRow>
         <Label>{label}</Label>
         <ButtonContainer>
-          <Button disabled={true}>
+          <Button type="button" disabled={true}>
             +
           </Button>
-          <Button disabled={true}>
+          <Button type="button" disabled={true}>
             -
           </Button>
         </ButtonContainer>

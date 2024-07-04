@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+import Button from '@/modules/common/components/Button';
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,24 +33,16 @@ const Label = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  height: 30px;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 16px;
   overflow: hidden;
 `;
 
-const Button = styled.button`
+const StyledButton = styled(Button)`
   width: 30px;
   height: 30px;
-  color: ${(props) => props.theme.colors.main};
-  background-color: ${(props) => props.theme.colors.mainLight};
-  border: none;
-  cursor: pointer;
-  transition: background-color 300ms;
-
-  &:hover {
-    color: white;
-    background-color: ${(props) => props.theme.colors.main};
-  }
+  border-radius: unset;
 `;
 
 const BottomRow = styled.div`
@@ -88,12 +82,12 @@ const HeroAbilityItem = ({
       <BottomRow>
         <Label>{label}</Label>
         <ButtonContainer>
-          <Button type="button" onClick={handleIncrease}>
+          <StyledButton htmlType="button" size="s" onClick={handleIncrease}>
             +
-          </Button>
-          <Button type="button" onClick={handleDecrease}>
+          </StyledButton>
+          <StyledButton htmlType="button" size="s" onClick={handleDecrease}>
             -
-          </Button>
+          </StyledButton>
         </ButtonContainer>
       </BottomRow>
     </Container>
@@ -111,12 +105,12 @@ const HeroAbilityItemLoading = ({ label }: LoadingProps) => {
       <BottomRow>
         <Label>{label}</Label>
         <ButtonContainer>
-          <Button type="button" disabled={true}>
+          <StyledButton htmlType="button" size="s" disabled={true}>
             +
-          </Button>
-          <Button type="button" disabled={true}>
+          </StyledButton>
+          <StyledButton htmlType="button" size="s" disabled={true}>
             -
-          </Button>
+          </StyledButton>
         </ButtonContainer>
       </BottomRow>
     </Container>

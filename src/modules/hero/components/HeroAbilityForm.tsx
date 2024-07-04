@@ -3,7 +3,9 @@
 /* eslint-disable react/no-children-prop */
 import { useForm } from '@tanstack/react-form';
 import { useMemo } from 'react';
-import styled, { RuleSet, css } from 'styled-components';
+import styled from 'styled-components';
+
+import Button from '@/modules/common/components/Button';
 
 import HeroAbilityItem from './HeroAbilityItem';
 import HeroAbilityResultPanel from './HeroAbilityResultPanel';
@@ -25,30 +27,8 @@ const FieldContainer = styled.div`
   width: 100%;
 `;
 
-type ButtonStatus = 'normal' | 'disabled';
-
-const SubmitButtonStyles: Record<ButtonStatus, RuleSet> = {
-  normal: css`
-    color: white;
-    background-color: ${(props) => props.theme.colors.main};
-  `,
-  disabled: css`
-    color: white;
-    background-color: ${(props) => props.theme.colors.secondaryText};
-  `,
-};
-
-const SubmitButton = styled.button<{ $status: ButtonStatus }>`
+const SubmitButton = styled(Button)`
   width: 100%;
-  font-size: 16px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 18px;
-  ${({ $status }) => SubmitButtonStyles[$status]}
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 2px 0px,
-    rgba(0, 0, 0, 0.08) 0px 4px 10px 0px;
-  cursor: pointer;
-  transition: 300ms;
 `;
 
 type Props = {
@@ -136,9 +116,10 @@ const HeroAbilityForm = ({ defaultValues, onSubmit }: Props) => {
               <>
                 <HeroAbilityResultPanel limit={limit} total={total} />
                 <SubmitButton
-                  type="submit"
+                  htmlType="submit"
+                  type={disabled ? 'disabled' : 'primary'}
                   disabled={disabled}
-                  $status={disabled ? 'disabled' : 'normal'}
+                  floating={true}
                 >
                   提交
                 </SubmitButton>

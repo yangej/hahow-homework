@@ -12,11 +12,11 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 100px;
   user-select: none;
-  color: rgb(89, 89, 89);
+  color: ${props => props.theme.colors.secondaryText};
 `;
 
 const Highlight = styled.span`
-  color: rgb(0, 190, 164);
+  color: ${props => props.theme.colors.main};
 `;
 
 const HomeView = () => {

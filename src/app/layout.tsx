@@ -6,6 +6,7 @@ import Providers from "./Providers";
 import "./global.css";
 
 import HeroList from "@/modules/hero/components/HeroList";
+import { colors } from "@/modules/app/constants/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={inter.className}
-        style={{ backgroundColor: "rgb(245, 247, 249)" }}
+        style={{ backgroundColor: colors.background }}
       >
         <Providers>
           <HeroList currentId={heroesId} />

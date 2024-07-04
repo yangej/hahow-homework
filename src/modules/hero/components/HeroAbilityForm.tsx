@@ -29,11 +29,11 @@ type ButtonStatus = "normal" | "disabled";
 const SubmitButtonStyles: Record<ButtonStatus, RuleSet> = {
   normal: css`
     color: white;
-    background-color: rgb(0, 190, 164);
+    background-color: ${props => props.theme.colors.main};
   `,
   disabled: css`
     color: white;
-    background-color: rgb(89, 89, 89);
+    background-color: ${props => props.theme.colors.secondaryText};
   `,
 };
 

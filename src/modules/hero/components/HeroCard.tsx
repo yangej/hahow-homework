@@ -5,12 +5,12 @@ type Status = "active" | "inactive";
 
 const ContainerStyles: Record<Status, RuleSet> = {
   active: css`
-    background-color: rgb(220, 249, 243);
-    color: rgb(0, 190, 164);
+    background-color: ${props => props.theme.colors.mainLight};
+    color: ${props => props.theme.colors.main};
   `,
   inactive: css`
-    background-color: rgb(245, 247, 249);
-    color: rgb(89, 89, 89);
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.secondaryText};
   `,
 };
 

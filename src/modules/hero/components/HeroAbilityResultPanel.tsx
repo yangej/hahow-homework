@@ -6,17 +6,17 @@ type Status = "normal" | "exceeded";
 
 const ContainerStyles: Record<Status, RuleSet> = {
   normal: css`
-    background-color: rgb(220, 249, 243);
+    background-color: ${props => props.theme.colors.mainLight};
 
     .highlight {
-      color: rgb(0, 190, 164);
+      color: ${props => props.theme.colors.main};
     }
   `,
   exceeded: css`
-    background-color: rgb(255, 245, 245);
+    background-color: ${props => props.theme.colors.warningLight};
 
     .highlight {
-      color: rgb(246, 95, 85);
+      color: ${props => props.theme.colors.warning};
     }
   `,
 };

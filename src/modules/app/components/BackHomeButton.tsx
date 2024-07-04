@@ -15,8 +15,8 @@ const Button = styled.button`
   padding: 10px 16px;
   border: none;
   border-radius: 18px;
-  background-color: rgb(220, 249, 243);
-  color: rgb(0, 190, 164);
+  background-color: ${props => props.theme.colors.mainLight};
+  color: ${props => props.theme.colors.main};
   box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 2px 0px,
     rgba(0, 0, 0, 0.08) 0px 4px 10px 0px;
   cursor: pointer;
@@ -24,7 +24,7 @@ const Button = styled.button`
 
   &:hover {
     color: white;
-    background-color: rgb(0, 190, 164);
+    background-color: ${props => props.theme.colors.main};
   }
 `;
 

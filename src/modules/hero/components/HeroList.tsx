@@ -12,7 +12,7 @@ const Container = styled.div`
   gap: 20px;
   margin: auto;
   padding: 20px;
-  background-color: rgb(0, 190, 164);
+  background-color: ${props => props.theme.colors.main};
 `;
 
 type Props = {

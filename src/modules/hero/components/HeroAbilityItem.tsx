@@ -38,15 +38,15 @@ const ButtonContainer = styled.div`
 const Button = styled.button`
   width: 30px;
   height: 30px;
-  color: rgb(0, 190, 164);
-  background-color: rgb(220, 249, 243);
+  color: ${props => props.theme.colors.main};
+  background-color: ${props => props.theme.colors.mainLight};
   border: none;
   cursor: pointer;
   transition: background-color 300ms;
 
   &:hover {
     color: white;
-    background-color: rgb(0, 190, 164);
+    background-color: ${props => props.theme.colors.main};
   }
 `;
 

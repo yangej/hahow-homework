@@ -1,4 +1,5 @@
 export const colors = {
+  darkMain: 'rgb(5, 173, 162)',
   main: 'rgb(0, 190, 164)',
   mainLight: 'rgb(220, 249, 243)',
   warning: 'rgb(246, 95, 85)',

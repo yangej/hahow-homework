@@ -1,7 +1,11 @@
+'use client';
+
 import type { ReactNode } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import ReactQueryProvider from '@/libs/react-query/ReactQueryProvider';
-import StyledComponentsProvider from '@/libs/styled-components/StyledComponentsProvider';
+import StyledComponentsRegister from '@/libs/styled-components/StyledComponentsRegister';
+import { theme } from '@/libs/styled-components/constants';
 
 interface Props {
   children: ReactNode;
@@ -10,7 +14,9 @@ interface Props {
 const Providers = ({ children }: Props) => {
   return (
     <ReactQueryProvider>
-      <StyledComponentsProvider>{children}</StyledComponentsProvider>
+      <StyledComponentsRegister>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </StyledComponentsRegister>
     </ReactQueryProvider>
   );
 };

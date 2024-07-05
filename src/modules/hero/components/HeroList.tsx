@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import styled from 'styled-components';
 
 import { useHeroes } from '../hooks';
@@ -16,11 +17,9 @@ const Container = styled.div`
   background-color: ${(props) => props.theme.colors.main};
 `;
 
-type Props = {
-  currentId?: string;
-};
-
-const HeroList = ({ currentId }: Props) => {
+const HeroList = () => {
+  const params = useParams();
+  const currentId = params.heroesId as string;
   const { data = [], isFetched } = useHeroes();
 
   const renderItem = () => {
